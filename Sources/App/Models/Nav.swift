@@ -34,7 +34,7 @@ struct Nav: Renderable, HTMLed {
     }
 }
 
-enum NavItems: String, CaseIterable, Renderable, HTMLed {
+enum NavItems: String, Renderable, HTMLed {
     
     case home
     case test
