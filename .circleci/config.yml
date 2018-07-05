@@ -2,9 +2,6 @@ version: 2
 
 jobs:
   develop:
-    branches:
-      only:
-        - develop
     docker:
       - image: swift:4.1
     steps:
@@ -23,6 +20,6 @@ jobs:
           command: vapor cloud deploy
 workflows:
   version: 2
-  tests:
+  build-test-and-deploy:
     jobs:
       - develop
