@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Install vapor
-          command: sudo apt-get install swift vapor
+          command: apt-get install swift vapor
       - run: 
           name: Compile code
           command: swift build
