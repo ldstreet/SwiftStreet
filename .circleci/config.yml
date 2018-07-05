@@ -21,3 +21,8 @@ jobs:
       - run: 
           name: Deploy to develop
           command: vapor cloud deploy
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - linux
