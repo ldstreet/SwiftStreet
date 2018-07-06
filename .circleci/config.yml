@@ -16,8 +16,11 @@ jobs:
           name: Run unit tests
           command: swift test
       - run: 
+          name: Login to Vapor Cloud
+          command: vapor cloud login --email $VAPOR_CLOUD_EMAIL --pass $VAPOR_CLOUD_PASS
+      - run: 
           name: Deploy to develop
-          command: vapor cloud deploy
+          command: vapor cloud deploy --app SwiftStreet --env develop --build clean
 workflows:
   version: 2
   build-test-and-deploy:
