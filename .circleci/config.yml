@@ -11,7 +11,7 @@ jobs:
           command: eval "$(curl -sL https://apt.vapor.sh)"
       - run:
           name: Install vapor
-          command: apt-get install vapor
+          command: apt-get install -y vapor
       - run: 
           name: Compile code
           command: swift build
