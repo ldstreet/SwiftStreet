@@ -27,7 +27,7 @@ struct Social: Renderable, HTMLed {
         """
     }
     
-    enum SocialLink: String, CaseIterable, Renderable, HTMLed {
+    enum SocialLink: String, Renderable, HTMLed {
         case twitter
         case github
         
