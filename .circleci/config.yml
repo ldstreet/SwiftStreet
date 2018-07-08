@@ -1,5 +1,4 @@
 version: 2
-
 jobs:
   develop:
     docker:
@@ -20,7 +19,7 @@ jobs:
           command: swift test
       - run: 
           name: Login to Vapor Cloud
-          command: vapor cloud login --email ${VAPOR_CLOUD_EMAIL} --pass ${VAPOR_CLOUD_PASS}
+          command: vapor cloud login --email $VAPOR_CLOUD_EMAIL --pass $VAPOR_CLOUD_PASS
       - run: 
           name: Deploy to develop
           command: vapor cloud deploy --app SwiftStreet --env develop --build clean
