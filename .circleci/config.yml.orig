@@ -1,16 +1,23 @@
 version: 2
+<<<<<<< HEAD
+
+=======
+>>>>>>> develop
 jobs:
   develop:
     docker:
       - image: swift:4.1
     steps:
       - checkout
+<<<<<<< HEAD
+=======
       - run:
           name: Add Vapor Apt Repo
           command: eval "$(curl -sL https://apt.vapor.sh)"
       - run:
           name: Install vapor
           command: apt-get install -y vapor
+>>>>>>> develop
       - run: 
           name: Compile code
           command: swift build
@@ -18,6 +25,10 @@ jobs:
           name: Run unit tests
           command: swift test
       - run: 
+<<<<<<< HEAD
+          name: Deploy to develop
+          command: vapor cloud deploy
+=======
           name: Login to Vapor Cloud
           command: vapor cloud login --email $VAPOR_CLOUD_EMAIL --pass $VAPOR_CLOUD_PASS
       - run: 
@@ -28,3 +39,4 @@ workflows:
   build-test-and-deploy:
     jobs:
       - develop
+>>>>>>> develop

@@ -5,7 +5,36 @@
 //  Created by Luke Street on 5/21/18.
 //
 
-enum Nav: String, CaseIterable, Renderable, HTMLed {
+struct Nav: Renderable, HTMLed {
+    var items: [NavItems]
+    
+    var html: String {
+        return """
+        <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+        
+        <nav class="header__nav-wrap">
+        
+        <h2 class="header__nav-heading h6">Site Navigation</h2>
+        
+        <ul class="header__nav">
+        \(
+        items.reduce("", { result, item in
+        return """
+        \(result)
+        \(item.html)
+        """
+        })
+        )
+        </ul> <!-- end header__nav -->
+        
+        <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+        
+        </nav> <!-- end header__nav-wrap -->
+        """
+    }
+}
+
+enum NavItems: String, Renderable, HTMLed {
     
     case home
     case test
@@ -19,30 +48,7 @@ enum Nav: String, CaseIterable, Renderable, HTMLed {
         }
     }
     
-    static var html: String {
-        return """
-        <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
-        
-        <nav class="header__nav-wrap">
-        
-            <h2 class="header__nav-heading h6">Site Navigation</h2>
-        
-            <ul class="header__nav">
-                \(
-                allCases.reduce("", { result, item in
-                    return """
-                    \(result)
-                    \(item.html)
-                    """
-                })
-                )
-            </ul> <!-- end header__nav -->
-        
-            <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
-        
-        </nav> <!-- end header__nav-wrap -->
-        """
-    }
+
     
     enum NavItem: Renderable, HTMLed {
         case single(link: NavItemLink)

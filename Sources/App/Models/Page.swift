@@ -8,6 +8,7 @@
 struct Page: Renderable, HTMLed {
     
     var name: String
+    var body: Renderable & HTMLed
     
     var html: String {
         return """
@@ -16,6 +17,7 @@ struct Page: Renderable, HTMLed {
         \(Head(pageName: name))
         <body id="top">
         \(PageHeader())
+        \(body)
         </body>
         </html>
         """
