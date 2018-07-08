@@ -17,7 +17,7 @@ struct PageHeader: Renderable, HTMLed {
         return """
         <!-- pageheader
         ================================================== -->
-        <section class="s-pageheader s-pageheader--home">
+        <section class="s-pageheader \(additional != nil ? "s-pageheader--home" : "")">
         \(Header())
         \(additional?.html ?? "")
         </section> <!-- end s-pageheader -->

@@ -18,6 +18,8 @@ struct Page: Renderable, HTMLed {
         <body id="top">
         \(PageHeader())
         \(body)
+        \(Extra())
+        \(Footer())
         \(Foot())
         </body>
         </html>
