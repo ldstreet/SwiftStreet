@@ -4,7 +4,7 @@ import Vapor
 public func routes(_ router: Router) throws {
     
     router.get { req in
-        return try Page(name: "Swift Street").render()
+        return try Page(name: "Swift Street", body: Social.init(links: [])).render()
     }
 }
 
