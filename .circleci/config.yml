@@ -5,24 +5,24 @@ jobs:
       - image: swift:4.1
     steps:
       - checkout
-      - run:
-          name: Add Vapor Apt Repo
-          command: eval "$(curl -sL https://apt.vapor.sh)"
-      - run:
-          name: Install vapor
-          command: apt-get install -y vapor
+      # - run:
+      #     name: Add Vapor Apt Repo
+      #     command: eval "$(curl -sL https://apt.vapor.sh)"
+      # - run:
+      #     name: Install vapor
+      #     command: apt-get install -y vapor
       - run: 
           name: Compile code
           command: swift build
       - run: 
           name: Run unit tests
           command: swift test
-      - run: 
-          name: Login to Vapor Cloud
-          command: vapor cloud login --email $VAPOR_CLOUD_EMAIL --pass $VAPOR_CLOUD_PASS
-      - run: 
-          name: Deploy to develop
-          command: vapor cloud deploy --app SwiftStreet --env develop --build clean
+      # - run: 
+      #     name: Login to Vapor Cloud
+      #     command: vapor cloud login --email $VAPOR_CLOUD_EMAIL --pass $VAPOR_CLOUD_PASS
+      # - run: 
+      #     name: Deploy to develop
+      #     command: vapor cloud deploy --app SwiftStreet --env develop --build clean
 workflows:
   version: 2
   build-test-and-deploy:
