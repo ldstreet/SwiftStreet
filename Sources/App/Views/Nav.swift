@@ -85,7 +85,7 @@ enum NavItems: String, Renderable, HTMLed {
             var link: String {
                 switch self {
                 case .home:
-                    return "#0"
+                    return "/"
                 }
             }
         }
