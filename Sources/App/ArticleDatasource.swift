@@ -32,11 +32,7 @@ extension Article: Parameter {
     }
 }
 
-struct InjectionMap {
-    static var articleDatasource: () -> ArticleDatasource = {
-        return ProgramaticArticleDatasource()
-    }
-}
+
 
 protocol InjectArticleDatasource {}
 extension InjectArticleDatasource {
@@ -56,7 +52,7 @@ struct ProgramaticArticleDatasource: ArticleDatasource {
                 date: .init(),
                 imagePath: "",
                 author: "Luke Street",
-                markdownFilePath: ""
+                markdownFilePath: "posts/Generics.md"
             ),
             Article(
                 title: "My Second Blog Post",
@@ -64,7 +60,7 @@ struct ProgramaticArticleDatasource: ArticleDatasource {
                 date: .init(),
                 imagePath: "",
                 author: "Luke Street",
-                markdownFilePath: ""
+                markdownFilePath: "posts/Generics.md"
             ),
             Article(
                 title: "My Third Blog Post",
@@ -72,7 +68,7 @@ struct ProgramaticArticleDatasource: ArticleDatasource {
                 date: .init(),
                 imagePath: "",
                 author: "Luke Street",
-                markdownFilePath: ""
+                markdownFilePath: "posts/Generics.md"
             )
         ]
     }

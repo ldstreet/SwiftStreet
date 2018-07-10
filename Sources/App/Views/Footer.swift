@@ -16,6 +16,7 @@ struct Footer: Renderable, HTMLed {
         <div class="col-full">
         <div class="s-footer__copyright">
         <span>© Copyright Swift Street 2018</span>
+        <span>Built with Swift</span>
         <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
         </div>
         
