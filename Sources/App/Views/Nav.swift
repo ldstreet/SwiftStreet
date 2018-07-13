@@ -6,7 +6,9 @@
 //
 
 struct Nav: Renderable, HTMLed {
-    var items: [NavItems]
+    
+    var items: [Items]
+    var currentItem: Items
     
     var html: String {
         return """
@@ -18,12 +20,13 @@ struct Nav: Renderable, HTMLed {
         
         <ul class="header__nav">
         \(
-        items.reduce("", { result, item in
-        return """
-        \(result)
-        \(item.html)
-        """
-        })
+        items.html { item in
+        if item == self.currentItem {
+            return item.htmlSelected
+        } else {
+            return item.html
+        }
+        }
         )
         </ul> <!-- end header__nav -->
         
@@ -32,62 +35,75 @@ struct Nav: Renderable, HTMLed {
         </nav> <!-- end header__nav-wrap -->
         """
     }
-}
-
-enum NavItems: String, Renderable, HTMLed {
     
-    case home
-    case test
-    
-    var html: String {
-        switch self {
-        case .home:
-            return NavItem.single(link: .home).html
-        case .test:
-            return NavItem.children(name: "Test", links: [.home, .home]).html
-        }
-    }
-    
-
-    
-    enum NavItem: Renderable, HTMLed {
-        case single(link: NavItemLink)
-        case children(name: String, links: [NavItemLink])
+    enum Items: Renderable, HTMLed {
+        
+        case home
+        case about
         
         var html: String {
             switch self {
-            case .single(let link):
-                return """
-                <li class="current"><a href="\(link.link)" title="">\(link.rawValue)</a></li>
-                """
-            case .children(let name, let links):
-                return """
-                <li class="has-children">
-                    <a href="#0" title="">\(name)</a>
-                    <ul class="sub-menu">
-                        \(
-                        links.reduce("", { result, link in
-                            return """
-                            \(result)
-                            <li><a href="\(link.link)">\(link.rawValue)</a></li>
-                            """
-                        })
-                        )
-                    </ul>
-                </li>
-                """
+            case .home:
+                return Item.single(link: .home, current: false).html
+            case .about:
+                return Item.single(link: .about, current: false).html
             }
         }
         
-        enum NavItemLink: String {
-            case home = "Home"
+        var htmlSelected: String {
+            switch self {
+            case .home:
+                return Item.single(link: .home, current: true).html
+            case .about:
+                return Item.single(link: .about, current: true).html
+            }
+        }
+        
+        enum Item: Renderable, HTMLed {
+            case single(link: Link, current: Bool)
+            case children(name: String, links: [Link], current: Bool)
             
-            var link: String {
+            var html: String {
                 switch self {
-                case .home:
-                    return "/"
+                case .single(let link, let current):
+                    let classStr = current ? "current" : ""
+                    return """
+                    <li class="\(classStr)">\(link.html)</li>
+                    """
+                case .children(let name, let links, let current):
+                    let classStr = current ? "has-children current" : ""
+                    return """
+                    <li class="\(classStr)">
+                    <a href="#0" title="">\(name)</a>
+                    <ul class="sub-menu">
+                    \(
+                    links.html(above: "<li>", below: "</li>")
+                    )
+                    </ul>
+                    </li>
+                    """
+                }
+            }
+            
+            enum Link: String, Renderable, HTMLed {
+                case home
+                case about
+                
+                var html: String {
+                    switch self {
+                    case .home:
+                        return """
+                        <a href="/">Home</a>
+                        """
+                    case .about:
+                        return """
+                        <a href="/about">About</a>
+                        """
+                    }
                 }
             }
         }
     }
+
 }
+

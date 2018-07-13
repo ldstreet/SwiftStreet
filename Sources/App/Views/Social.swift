@@ -11,19 +11,11 @@ struct Social: Renderable, HTMLed {
     var socialClass: SocialClass
     
     var html: String {
-        
-        let linkStr = links.reduce("") { (result, links) -> String in
-            return """
-            \(result)
-            <li>
-            \(links.html)
-            </li>
-            """
-        }
+        guard !links.isEmpty else { return "" }
         
         return """
         <ul class="\(socialClass.rawValue)">
-        \(linkStr)
+        \(links.html(above: "<li>", below: "</li>"))
         </ul> <!-- end header__social -->
         """
     }

@@ -13,28 +13,17 @@ struct ArticleStream: Renderable, HTMLed {
     
     var html: String {
         return """
-        <!-- s-content
-        ================================================== -->
-        <section class="s-content">
-        
         <div class="row masonry-wrap">
         <div class="masonry">
         
         <div class="grid-sizer"></div>
         
         \(
-        articles.reduce("") { result, article in
-            return """
-            \(result)
-            \(article)
-            """
-        }
+        articles
         )
         
         </div> <!-- end masonry -->
         </div> <!-- end masonry-wrap -->
-        
-        </section> <!-- s-content -->
         """
     }
     

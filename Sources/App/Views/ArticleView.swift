@@ -11,9 +11,9 @@ struct ArticleView: Renderable, HTMLed {
     
     var html: String {
         return """
-        <div>
+        <article class="row format-standard">
         \(markdownHTML)
-        </div>
+        </article>
         """
     }
 }

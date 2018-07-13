@@ -8,7 +8,17 @@
 struct Page: Renderable, HTMLed {
     
     var name: String
-    var body: Renderable & HTMLed
+    var currentItem: Nav.Items
+    var body: Body
+    var hasExtra: Bool
+    
+    init(name: String, body: Body, hasExtra: Bool = true, currentItem: Nav.Items) {
+        self.name = name
+        self.body = body
+        self.hasExtra = hasExtra
+        self.currentItem = currentItem
+    }
+    
     
     var html: String {
         return """
@@ -16,9 +26,9 @@ struct Page: Renderable, HTMLed {
         <html class="no-js" lang="en">
         \(Head(pageName: name))
         <body id="top">
-        \(PageHeader())
+        \(PageHeader(currentItem: currentItem))
         \(body)
-        \(Extra())
+        \(hasExtra ? Extra().html : "")
         \(Footer())
         \(Foot())
         </body>

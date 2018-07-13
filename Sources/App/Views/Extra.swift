@@ -11,7 +11,7 @@ struct Extra: Renderable, HTMLed {
         return """
         <section class="s-extra">
         <div class="row top">
-        \(AboutBlurb.swiftStreet)
+        \(AboutBlurb.extraAboutBlurb)
         </div> <!-- end row -->
         </section> <!-- end s-extra -->
         """

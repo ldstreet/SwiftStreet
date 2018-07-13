@@ -27,10 +27,12 @@ struct ArticleController: InjectMarkdownRenderer {
             }.flatMap { markdown -> Future<View> in
                 let html = try self.markdownRenderer.renderMarkdownToHtml(markdown)
                 return .map(on: req) {
+                    let articleView = ArticleView(markdownHTML: html)
                     return try Page(
                         name: article.title,
-                        body: ArticleView(markdownHTML: html)
-                        ).render()
+                        body: Body(content: articleView),
+                        currentItem: .home
+                    ).render()
                 }
             }
         }

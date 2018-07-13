@@ -7,13 +7,15 @@
 
 struct Header: Renderable, HTMLed {
     
+    var currentItem: Nav.Items
+    
     var html: String {
         return """
         <header class="header">
         <div class="header__content row">
-        \(Logo(imagePath: "images/logo.svg", link: ""))
+        \(Logo(imagePath: "/images/logo.svg", link: ""))
         \(Social(links: [.github, .twitter], socialClass: .header))
-        \(Nav(items: [.home, .test]))
+        \(Nav(items: [.home, .about], currentItem: currentItem))
         </div> <!-- header-content -->
         </header> <!-- header -->
         """

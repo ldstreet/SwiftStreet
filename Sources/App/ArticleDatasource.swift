@@ -21,7 +21,7 @@ enum ArticleError: Error {
     case invalidID
 }
 
-extension Article: Content {}
+extension Article: Vapor.Content {}
 extension Article: Parameter {
     static func resolveParameter(_ parameter: String, on container: Container) throws -> Future<Article> {
         let articles = try InjectionMap.articleDatasource().fetchArticles()
@@ -47,25 +47,9 @@ struct ProgramaticArticleDatasource: ArticleDatasource {
     func fetchArticles() throws -> [Article] {
         return [
             Article(
-                title: "My First Blog Post",
-                description: "This is a post about...nothing yet!",
-                date: .init(),
-                imagePath: "",
-                author: "Luke Street",
-                markdownFilePath: "posts/Generics.md"
-            ),
-            Article(
-                title: "My Second Blog Post",
-                description: "This is a post about...nothing yet!",
-                date: .init(),
-                imagePath: "",
-                author: "Luke Street",
-                markdownFilePath: "posts/Generics.md"
-            ),
-            Article(
-                title: "My Third Blog Post",
-                description: "This is a post about...nothing yet!",
-                date: .init(),
+                title: "Generics",
+                description: "In this post we deep dive into generics. How they work, where they work, and how you can use them in your own codebade.",
+                date: Date.dateFrom_MMddyyyy("09/10/2018") ?? Date.init(),
                 imagePath: "",
                 author: "Luke Street",
                 markdownFilePath: "posts/Generics.md"
