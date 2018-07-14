@@ -1789,6 +1789,15 @@ button::-moz-focus-inner, input::-moz-focus-inner {
    height: 48px;
 }
 
+.header__logo h1 {
+    font-size: 5.0rem;
+    line-height: 2.00;
+    margin-top: 0;
+    letter-spacing: -.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    height: 48px;
+}
+
 
 /* -------------------------------------------------------------------
  * ## header social

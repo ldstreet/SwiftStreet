@@ -25,7 +25,7 @@ struct About: Renderable, HTMLed {
         
         <div class="s-content__media col-full">
         <div class="s-content__post-thumb">
-        <img src="\(imagePath)">
+        <img class="header__logo" src="\(imagePath)">
         </div>
         </div> <!-- end s-content__media -->
         
@@ -38,7 +38,7 @@ struct About: Renderable, HTMLed {
         
         <div class="row block-1-2 block-tab-full">
         
-        \(quarters)
+        \(quarters.html)
         
         </div>
         

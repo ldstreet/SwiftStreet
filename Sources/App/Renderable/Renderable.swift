@@ -36,7 +36,6 @@ protocol HTMLed: CustomStringConvertible {
 
 extension HTMLed {
     var description: String {
-        print(html)
         return html
     }
 }

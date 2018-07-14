@@ -17,6 +17,9 @@ struct Footer: Renderable, HTMLed {
         <div class="s-footer__copyright">
         <span>© Copyright Swift Street 2018</span>
         <span>Built with Swift</span>
+        <span>
+        Logo created on <a href="http://logomakr.com" title="Logo Makr">LogoMakr.com</a>
+        </span>
         <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
         </div>
         

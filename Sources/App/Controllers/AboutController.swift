@@ -11,11 +11,11 @@ struct AboutController {
     func about(_ req: Request) -> Future<View> {
         return .map(on: req) {
             
-            let about = About(title: "What is Swift Street",
-                              imagePath: "",
+            let about = About(title: "About",
+                              imagePath: "/images/logo.png",
                               leadText: "This is my lead text...",
                               mainText: "Hello, welcome to Swift Street!",
-                              quarters: [.init(title: "Title", text: "Some Text"),
+                              quarters: [.init(title: "Who am I", text: "Some Text"),
                                          .init(title: "Title", text: "Some Text"),
                                          .init(title: "Title", text: "Some Text"),
                                          .init(title: "Title", text: "Some Text")]

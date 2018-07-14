@@ -19,7 +19,7 @@ struct ArticleStream: Renderable, HTMLed {
         <div class="grid-sizer"></div>
         
         \(
-        articles
+        articles.html
         )
         
         </div> <!-- end masonry -->

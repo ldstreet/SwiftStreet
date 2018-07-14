@@ -15,6 +15,7 @@ struct Logo: Renderable, HTMLed {
         <div class="header__logo">
         <a class="logo" href="\(link)">
         <img src="\(imagePath)" alt="Homepage">
+        <!-- <h1 class="header__logo">Swift Street</h1> -->
         </a>
         </div> <!-- end header__logo -->
         """
