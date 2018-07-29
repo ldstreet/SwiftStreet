@@ -5,11 +5,11 @@
 //  Created by Luke Street on 7/9/18.
 //
 
-import SwiftMarkdown
+import PerfectMarkdown
 
 struct SwiftMarkdownRenderer: MarkdownRenderer {
     func renderMarkdownToHtml(_ markdown: String) throws -> String {
-        return try markdownToHTML(markdown)
+        return markdown.markdownToHTML ?? ""
     }
 }
 

@@ -301,23 +301,23 @@ pre {
    overflow-x: auto;
 }
 
-code {
-   font-size: 1.4rem;
-   margin: 0 .2rem;
-   padding: .3rem .6rem;
-   white-space: nowrap;
-   background: #e5e5e5;
-   border: 1px solid #d8d8d8;
-   border-radius: 3px;
-}
+/*code {*/
+/*   font-size: 1.4rem;*/
+/*   margin: 0 .2rem;*/
+/*   padding: .3rem .6rem;*/
+/*   white-space: nowrap;*/
+/*   background: #e5e5e5;*/
+/*   border: 1px solid #d8d8d8;*/
+/*   border-radius: 3px;*/
+/*}*/
 
-pre > code {
-   display: block;
-   white-space: pre;
-   line-height: 2;
-   padding: 0;
-   margin: 0;
-}
+/*pre > code {*/
+/*   display: block;*/
+/*   white-space: pre;*/
+/*   line-height: 2;*/
+/*   padding: 0;*/
+/*   margin: 0;*/
+/*}*/
 
 pre.prettyprint > code {
    border: none;

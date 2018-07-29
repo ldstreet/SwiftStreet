@@ -12,7 +12,7 @@ struct AboutController {
         return .map(on: req) {
             
             let about = About(title: "About",
-                              imagePath: "/images/logo.png",
+                              imagePath: "/images/swiftstreet-square.svg",
                               leadText: "This is my lead text...",
                               mainText: "Hello, welcome to Swift Street!",
                               quarters: [.init(title: "Who am I", text: "Some Text"),
@@ -22,7 +22,7 @@ struct AboutController {
             )
             
             return try Page(name: "About",
-                            body: Body(content: about),
+                            body: .init(content: about),
                             hasExtra: false,
                             currentItem: .about
                     ).render()

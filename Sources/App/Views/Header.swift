@@ -13,7 +13,7 @@ struct Header: Renderable, HTMLed {
         return """
         <header class="header">
         <div class="header__content row">
-        \(Logo(imagePath: "/images/header-logo.png", link: "/"))
+        \(Logo(imagePath: "/images/swiftstreet-header-white.svg", link: "/"))
         \(Social(links: [.github, .twitter], socialClass: .header))
         \(Nav(items: [.home, .about], currentItem: currentItem))
         </div> <!-- header-content -->

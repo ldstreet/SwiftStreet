@@ -25,7 +25,7 @@ struct About: Renderable, HTMLed {
         
         <div class="s-content__media col-full">
         <div class="s-content__post-thumb">
-        <img class="header__logo" src="\(imagePath)">
+        <img class="comment__avatar" src="\(imagePath)">
         </div>
         </div> <!-- end s-content__media -->
         

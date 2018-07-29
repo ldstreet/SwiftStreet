@@ -43,7 +43,7 @@ struct ArticleStream: Renderable, HTMLed {
                 return """
                 <article class="masonry__brick entry format-standard" data-aos="fade-up">
                 
-                <div class="entry__thumb">
+                <div class="entry__thumb" >
                 <a href="\(articleLink)" class="entry__thumb-link">
                 <img src="\(imagePath)">
                 </a>

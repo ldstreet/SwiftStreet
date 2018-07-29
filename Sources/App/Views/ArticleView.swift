@@ -10,9 +10,15 @@ struct ArticleView: Renderable, HTMLed {
     var markdownHTML: String
     
     var html: String {
+        let newTag = """
+                    <code class="language-swift">
+                    """
+        let markdown = markdownHTML
+            .replacingOccurrences(of: "<code>", with: newTag)
         return """
         <article class="row format-standard">
-        \(markdownHTML)
+        <script src="/js/prism.js"></script>
+        \(markdown)
         </article>
         """
     }

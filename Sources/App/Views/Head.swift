@@ -30,11 +30,13 @@ internal struct Head: Renderable, HTMLed {
             <link rel="stylesheet" href="/css/base.css">
             <link rel="stylesheet" href="/css/vendor.css">
             <link rel="stylesheet" href="/css/main.css">
+            <link href="/css/prism.css" rel="stylesheet" />
         
             <!-- script
             ================================================== -->
             <script src="/js/modernizr.js"></script>
             <script src="/js/pace.min.js"></script>
+
         
             <!-- favicons
             ================================================== -->
