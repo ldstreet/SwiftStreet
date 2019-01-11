@@ -18,22 +18,23 @@ struct About: Renderable, HTMLed {
         <div class="row">
         
         <div class="s-content__header col-full">
-        <h1 class="s-content__header-title">
+        <!--<h1 class="s-content__header-title">
         \(title)
-        </h1>
+        </h1>-->
         </div> <!-- end s-content__header -->
         
         <div class="s-content__media col-full">
         <div class="s-content__post-thumb">
-        <img class="comment__avatar" src="\(imagePath)">
+        <p style="text-align:center;"><img src="\(imagePath)" alt="Logo"></p>
         </div>
         </div> <!-- end s-content__media -->
         
         <div class="col-full s-content__main">
         
-        <p class="lead">\(leadText)</p>
+        <p style="text-align:center;" class="lead">\(leadText)</p>
         
-        <p>\(mainText)
+        <p style="text-align:center;">
+            \(mainText)
         </p>
         
         <div class="row block-1-2 block-tab-full">

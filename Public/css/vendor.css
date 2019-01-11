@@ -2329,14 +2329,14 @@ Reference: http://blog.rrwd.nl/2015/04/04/the-screen-reader-text-class-why-and-h
  * # prettyprint GitHub Theme 
  *
  * ------------------------------------------------------------------- */
-.prettyprint {
+/*.prettyprint {
    background: #e5e5e5;
    font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
    font-size: 12px;
    line-height: 1.5;
    border-radius: 3px;
    border: none;
-}
+}*/
 
 .pln {
    color: #333333;

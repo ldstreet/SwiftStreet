@@ -291,16 +291,16 @@ abbr {
    color: #727272;
 }
 
-var, kbd, samp, code, pre {
+/*var, kbd, samp, code, pre {
    font-family: Consolas, "Andale Mono", Courier, "Courier New", monospace;
-}
+}*/
 
-pre {
+/*pre {
    padding: 2.4rem 3rem 3rem;
    background: #F1F1F1;
    overflow-x: auto;
 }
-
+*/
 /*code {*/
 /*   font-size: 1.4rem;*/
 /*   margin: 0 .2rem;*/
@@ -319,9 +319,9 @@ pre {
 /*   margin: 0;*/
 /*}*/
 
-pre.prettyprint > code {
+/*pre.prettyprint > code {
    border: none;
-}
+}*/
 
 del {
    text-decoration: line-through;

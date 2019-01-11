@@ -7,14 +7,14 @@
 
 import Vapor
 
-struct ArticleController: InjectMarkdownRenderer {
+struct ArticleController {
     
     func article(_ req: Request) throws -> Future<View> {
         return try req.parameters.next(Article.self).flatMap { article in
             //let base =
             //let fullURLStr = "\(base)/\(article.markdownFilePath)"
             let publicPath = try req.sharedContainer.make(DirectoryConfig.self).workDir + "Public/"
-            let fullPath = "\(publicPath)/\(article.markdownFilePath)"
+            let fullPath = "\(publicPath)/\(article.playgroundFilePath)/Contents.swift"
             let res = try req.streamFile(at: fullPath)
             return res.flatMap { response -> Future<Data> in
                 return response.http.body.consumeData(on: req)
@@ -24,8 +24,8 @@ struct ArticleController: InjectMarkdownRenderer {
                     return String.init(data: data, encoding: .utf8)!
                 }
                 //return try response.content.decode(String.self)
-            }.flatMap { markdown -> Future<View> in
-                let html = try self.markdownRenderer.renderMarkdownToHtml(markdown)
+            }.flatMap { swift -> Future<View> in
+                let html = try Current.renderSwiftToHTML(swift)
                 return .map(on: req) {
                     let articleView = ArticleView(markdownHTML: html)
                     return try Page(

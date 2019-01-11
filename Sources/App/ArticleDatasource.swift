@@ -14,7 +14,7 @@ struct Article: Codable {
     var date: Date
     var imagePath: String
     var author: String
-    var markdownFilePath: String
+    var playgroundFilePath: String
 }
 
 enum ArticleError: Error {
@@ -24,7 +24,7 @@ enum ArticleError: Error {
 extension Article: Vapor.Content {}
 extension Article: Parameter {
     static func resolveParameter(_ parameter: String, on container: Container) throws -> Future<Article> {
-        let articles = try InjectionMap.articleDatasource().fetchArticles()
+        let articles = try Current.fetchArticles()
         guard let id = Int(parameter), id < articles.count else {
             throw ArticleError.invalidID
         }
@@ -32,18 +32,7 @@ extension Article: Parameter {
     }
 }
 
-
-
-protocol InjectArticleDatasource {}
-extension InjectArticleDatasource {
-     var articleDatasource: ArticleDatasource { return InjectionMap.articleDatasource() }
-}
-
-protocol ArticleDatasource {
-    func fetchArticles() throws -> [Article]
-}
-
-struct ProgramaticArticleDatasource: ArticleDatasource {
+struct ProgramaticArticleDatasource {
     func fetchArticles() throws -> [Article] {
         return [
             Article(
@@ -52,7 +41,7 @@ struct ProgramaticArticleDatasource: ArticleDatasource {
                 date: Date.dateFrom_MMddyyyy("09/10/2018") ?? Date.init(),
                 imagePath: "",
                 author: "Luke Street",
-                markdownFilePath: "posts/Generics.md"
+                playgroundFilePath: "posts/Generics.playground"
             )
         ]
     }
