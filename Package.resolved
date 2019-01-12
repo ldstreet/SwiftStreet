@@ -74,15 +74,6 @@
         }
       },
       {
-        "package": "PlayDocs",
-        "repositoryURL": "https://github.com/ldstreet/PlayDocs.git",
-        "state": {
-          "branch": "master",
-          "revision": "166b2e444e391b2516cfeb76603c3ab762823cff",
-          "version": null
-        }
-      },
-      {
         "package": "Routing",
         "repositoryURL": "https://github.com/vapor/routing.git",
         "state": {

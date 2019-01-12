@@ -12,11 +12,8 @@ struct Nav: Renderable, HTMLed {
     
     var html: String {
         return """
-        <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
         
         <nav class="header__nav-wrap">
-        
-        <h2 class="header__nav-heading h6">Site Navigation</h2>
         
         <ul class="header__nav">
         \(
@@ -30,7 +27,7 @@ struct Nav: Renderable, HTMLed {
         )
         </ul> <!-- end header__nav -->
         
-        <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+        
         
         </nav> <!-- end header__nav-wrap -->
         """

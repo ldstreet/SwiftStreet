@@ -56,7 +56,6 @@ article,
 aside,
 footer,
 header,
-nav,
 section {
    display: block;
 }
@@ -260,10 +259,6 @@ textarea {
    font: inherit;
 }
 
-details,
-menu {
-   display: block;
-}
 
 summary {
    display: list-item;
@@ -646,9 +641,6 @@ textarea {
       width: 100%;
    }
 
-   .hide-on-mobile {
-      display: none;
-   }
 }
 
 /* ------------------------------------------------------------------- 

@@ -41,31 +41,28 @@ struct ArticleStream: Renderable, HTMLed {
                 let dateStr = dateFormatter.string(from: date)
                 
                 return """
+                
                 <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                    <a style="display:block; color: inherit;" class="entry__thumb-link" href="\(articleLink)">
+                        <div class="entry__text">
+                            <div class="entry__header">
                 
-                <div class="entry__thumb" >
-                <a href="\(articleLink)" class="entry__thumb-link">
-                <img src="\(imagePath)">
-                </a>
-                </div>
+                                <div class="entry__date">
+                                    <p>\(dateStr)</p>
+                                </div>
+                                <h1 class="entry__title">\(title)</h1>
                 
-                <div class="entry__text">
-                <div class="entry__header">
+                            </div>
+                            <div class="entry__excerpt">
                 
-                <div class="entry__date">
-                <a href="\(articleLink)">\(dateStr)</a>
-                </div>
-                <h1 class="entry__title"><a href="\(articleLink)">\(title)</a></h1>
-                
-                </div>
-                <div class="entry__excerpt">
-                <p>
-                \(previewText)
-                </p>
-                </div>
-                </div>
-                
+                                <span>
+                                    \(previewText)
+                                </span>
+                            </div>
+                        </div>
+                    </a>
                 </article> <!-- end article -->
+                
                 """
             }
             
