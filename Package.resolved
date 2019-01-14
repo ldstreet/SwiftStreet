@@ -74,6 +74,15 @@
         }
       },
       {
+        "package": "PlayDocs",
+        "repositoryURL": "https://github.com/ldstreet/PlayDocs.git",
+        "state": {
+          "branch": "master",
+          "revision": "2c7267188827186eccd4343edb68645722f69b59",
+          "version": null
+        }
+      },
+      {
         "package": "Routing",
         "repositoryURL": "https://github.com/vapor/routing.git",
         "state": {
@@ -98,15 +107,6 @@
           "branch": null,
           "revision": "187effae29997c211b87ba7d2885023eab8cb935",
           "version": "0.1.4"
-        }
-      },
-      {
-        "package": "Html",
-        "repositoryURL": "https://github.com/pointfreeco/swift-html.git",
-        "state": {
-          "branch": null,
-          "revision": "513bc70a27e1c4df14c85b1cab5146cc4e235a4f",
-          "version": "0.2.0"
         }
       },
       {
@@ -146,12 +146,12 @@
         }
       },
       {
-        "package": "SnapshotTesting",
-        "repositoryURL": "https://github.com/pointfreeco/swift-snapshot-testing.git",
+        "package": "Overture",
+        "repositoryURL": "https://github.com/pointfreeco/swift-overture.git",
         "state": {
           "branch": null,
-          "revision": "129e393c6d17f7f6490fa212f19ae0d558bbd5dc",
-          "version": "1.1.0"
+          "revision": "d748c1351354ec34e591dd04662ddb58b7e01180",
+          "version": "0.3.1"
         }
       },
       {
