@@ -220,17 +220,6 @@ p.lead {
 
 }
 
-em, i, strong, b {
-   font-size: inherit;
-   line-height: inherit;
-   font-style: normal;
-   font-weight: normal;
-}
-
-em, i {
-   font-family: "metropolis-italic", sans-serif;
-}
-
 strong, b {
    font-family: "metropolis-bold", sans-serif;
 }

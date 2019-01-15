@@ -77,9 +77,9 @@
         "package": "PlayDocs",
         "repositoryURL": "https://github.com/ldstreet/PlayDocs.git",
         "state": {
-          "branch": "master",
+          "branch": null,
           "revision": "2c7267188827186eccd4343edb68645722f69b59",
-          "version": null
+          "version": "0.1.0"
         }
       },
       {

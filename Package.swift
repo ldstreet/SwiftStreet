@@ -9,7 +9,7 @@ let package = Package(
         .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
         
         // 🏓 A framework for converting Playgrounds and Swift files to markdown and html
-        .package(url: "https://github.com/ldstreet/PlayDocs.git", .branch("master")),
+        .package(url: "https://github.com/ldstreet/PlayDocs.git", from: "0.1.0"),
         
         
     ],
